@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>文字动效</title>
+  <style>
+    .demo {
+      padding: 1em;
+      background: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>1、动画文本填充</h1>
+  <div class="demo">
+    <style>
+      .demo1 span {
+        text-transform: uppercase;
+        font: 700 4em/1 "Oswald", sans-serif;
+        letter-spacing: 0;
+        padding: .25em 0 .325em;
+        display: block;
+        text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: bganimate 80s linear infinite;
+        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+      }
+
+      .demo1 span.red {
+        background: url(images/demo1.png) repeat-y;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+
+      .demo1 span.blue {
+        background: url(images/demo1_1.png) repeat-y;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+
+      @-webkit-keyframes bganimate {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+    </style>
+    <p class="demo1">
+      <span class="red">
+        红色背景中文
+      </span>
+      <span class="blue">
+        Blue background
+      </span>
+      — 兼容性： edge15、firefox49、chrome、Android 4 —
+    </p>
+  </div>
+
+  <h1>2、文字动画</h1>
+  <div class="demo">
+    <style>
+      .demo2 svg {
+        display: block;
+        font: 7em 'Arial';
+      }
+
+      .text-copy {
+        fill: none;
+        stroke: rgb(6, 253, 253);
+        stroke-dasharray: 6% 19%;
+        stroke-width: 3px;
+        stroke-dashoffset: 0%;
+        animation: stroke-offset 5.5s infinite linear;
+      }
+
+      .text-copy:nth-child(1) {
+        stroke: rgb(0, 153, 255);
+        animation-delay: -1s;
+      }
+
+      .text-copy:nth-child(2) {
+        stroke: #fd026b;
+        animation-delay: -2s;
+      }
+
+      .text-copy:nth-child(3) {
+        stroke: rgb(252, 8, 219);
+        animation-delay: -3s;
+      }
+
+      .text-copy:nth-child(4) {
+        stroke: rgb(14, 243, 64);
+        animation-delay: -4s;
+      }
+
+      .text-copy:nth-child(5) {
+        stroke: #FDB731;
+        animation-delay: -5s;
+      }
+
+      @keyframes stroke-offset {
+        100% {
+          stroke-dashoffset: -35%;
+        }
+      }
+    </style>
+    <div class="demo2">
+      <svg viewBox="0 0 900 250">
+        <symbol id="s-text">
+          <text text-anchor="middle" x="50%" y="40%">Education BG</text>
+          <text text-anchor="middle" x="50%" y="85%">教育事业群</text>
+        </symbol>
+
+        <g class="g-ants">
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+      </svg>
+      <p>— 兼容性： ie9、firefox、chrome、Android 4.4 —</p>
+    </div>
+  </div>
+
+  <h1>3、字符动画</h1>
+  <div class="demo">
+    <style>
+      .demo3 h2 {
+        margin: auto;
+        font-size: 5em;
+        text-align: center;
+        text-transform: uppercase;
+        color: #900048;
+        white-space: nowrap;
+        letter-spacing: -.15em;
+        font-family: sans-serif;
+      }
+
+      .demo3 h2 span:nth-child(1) {
+        animation: variety 1s steps(1, start) 0.33s infinite;
+      }
+
+      .demo3 h2 span:nth-child(2) {
+        animation: variety 1s steps(1, start) 0.66s infinite;
+      }
+
+      .demo3 h2 span:nth-child(3) {
+        animation: variety 1s steps(1, start) 0.33s infinite;
+      }
+
+      .demo3 h2 span:nth-child(4) {
+        animation: variety 1s steps(1, start) 0.66s infinite;
+      }
+
+      .demo3 h2 span:nth-child(5) {
+        animation: variety 1s steps(1, start) 0.33s infinite;
+      }
+
+      .demo3 h2 span:nth-child(6) {
+        animation: variety 1s steps(1, start) 0.66s infinite;
+      }
+
+      @keyframes variety {
+        33% {
+          color: rgb(43, 199, 247);
+        }
+
+        66% {
+          color: rgb(91, 252, 70);
+        }
+      }
+    </style>
+    <div class="demo3">
+      <h2>
+        <span>T</span>
+        <span>h</span>
+        <span>a</span>
+        <span>n</span>
+        <span>k</span>
+        <span>s</span>
+      </h2>
+      <h2>
+        <span>用</span>
+        <span>户</span>
+        <span>体</span>
+        <span>验</span>
+        <span>设</span>
+        <span>计</span>
+      </h2>
+    </div>
+    <p>— 兼容性： ie10、firefox、chrome、Android —</p>
+  </div>
+
+  <h1>4、复古风</h1>
+  <div class="demo">
+    <style>
+      .demo4 h2 {
+        color: hsla(0, 0%, 0%, .9);
+        font: normal 5em sans-serif;
+        margin: 0;
+        text-align: center;
+        animation: move linear 2000ms infinite;
+      }
+
+      @keyframes move {
+        0% {
+          text-shadow:
+            4px -4px 0 hsla(0, 100%, 50%, 1),
+            3px -3px 0 hsla(0, 100%, 50%, 1),
+            2px -2px 0 hsla(0, 100%, 50%, 1),
+            1px -1px 0 hsla(0, 100%, 50%, 1),
+            -4px 4px 0 hsla(180, 100%, 50%, 1),
+            -3px 3px 0 hsla(180, 100%, 50%, 1),
+            -2px 2px 0 hsla(180, 100%, 50%, 1),
+            -1px 1px 0 hsla(180, 100%, 50%, 1);
+        }
+
+        25% {
+          text-shadow:
+            -4px -4px 0 hsla(180, 100%, 50%, 1),
+            -3px -3px 0 hsla(180, 100%, 50%, 1),
+            -2px -2px 0 hsla(180, 100%, 50%, 1),
+            -1px -1px 0 hsla(180, 100%, 50%, 1),
+            4px 4px 0 hsla(0, 100%, 50%, 1),
+            3px 3px 0 hsla(0, 100%, 50%, 1),
+            2px 2px 0 hsla(0, 100%, 50%, 1),
+            1px 1px 0 hsla(0, 100%, 50%, 1);
+        }
+
+        50% {
+          text-shadow:
+            -4px 4px 0 hsla(0, 100%, 50%, 1),
+            -3px 3px 0 hsla(0, 100%, 50%, 1),
+            -2px 2px 0 hsla(0, 100%, 50%, 1),
+            -1px 1px 0 hsla(0, 100%, 50%, 1),
+            4px -4px 0 hsla(180, 100%, 50%, 1),
+            3px -3px 0 hsla(180, 100%, 50%, 1),
+            2px -2px 0 hsla(180, 100%, 50%, 1),
+            1px -1px 0 hsla(180, 100%, 50%, 1);
+        }
+
+        75% {
+          text-shadow:
+            4px 4px 0 hsla(180, 100%, 50%, 1),
+            3px 3px 0 hsla(180, 100%, 50%, 1),
+            2px 2px 0 hsla(180, 100%, 50%, 1),
+            1px 1px 0 hsla(180, 100%, 50%, 1),
+            -4px -4px 0 hsla(0, 100%, 50%, 1),
+            -3px -3px 0 hsla(0, 100%, 50%, 1),
+            -2px -2px 0 hsla(0, 100%, 50%, 1),
+            -1px -1px 0 hsla(0, 100%, 50%, 1);
+        }
+
+        100% {
+          text-shadow:
+            4px -4px 0 hsla(0, 100%, 50%, 1),
+            3px -3px 0 hsla(0, 100%, 50%, 1),
+            2px -2px 0 hsla(0, 100%, 50%, 1),
+            1px -1px 0 hsla(0, 100%, 50%, 1),
+            -4px 4px 0 hsla(180, 100%, 50%, 1),
+            -3px 3px 0 hsla(180, 100%, 50%, 1),
+            -2px 2px 0 hsla(180, 100%, 50%, 1),
+            -1px 1px 0 hsla(180, 100%, 50%, 1);
+        }
+      }
+    </style>
+    <div class="demo4">
+      <h2>Education Design</h2>
+      <h2>教育BG用户体验设计部</h2>
+    </div>
+
+    <p>— 兼容性： ie10、firefox、chrome、Android —</p>
+  </div>
+
+  <h1>5、透视效果</h1>
+  <div class="demo">
+    <style>
+      .focus {
+        font-size: 3em;
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: .1em;
+        line-height: 1;
+        position: relative;
+        width: 330px;
+        ;
+      }
+
+      .focus:before {
+        content: 'Education';
+        -webkit-filter: blur(3px);
+        filter: blur(3px);
+      }
+
+      .focus:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: calc(100% + 8px);
+        top: -4px;
+        left: 0;
+        border-top: 2px solid;
+        border-bottom: 2px solid;
+        -webkit-animation: mask-move 2s linear infinite alternate;
+        animation: mask-move 2s linear infinite alternate;
+      }
+
+      .focus--mask {
+        overflow: hidden;
+        position: absolute;
+        width: 50px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #000;
+        -webkit-animation: mask-move 2s linear infinite alternate;
+        animation: mask-move 2s linear infinite alternate;
+      }
+
+      .focus--mask-inner {
+        -webkit-animation: mask-inner-move 2s linear infinite alternate;
+        animation: mask-inner-move 2s linear infinite alternate;
+      }
+
+      @-webkit-keyframes mask-move {
+        0% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+        }
+
+        100% {
+          -webkit-transform: translateX(280px);
+          transform: translateX(280px);
+        }
+      }
+
+      @keyframes mask-move {
+        0% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+        }
+
+        100% {
+          -webkit-transform: translateX(280px);
+          transform: translateX(280px);
+        }
+      }
+
+      @-webkit-keyframes mask-inner-move {
+        0% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+        }
+
+        100% {
+          -webkit-transform: translateX(-280px);
+          transform: translateX(-280px);
+        }
+      }
+
+      @keyframes mask-inner-move {
+        0% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+        }
+
+        100% {
+          -webkit-transform: translateX(-280px);
+          transform: translateX(-280px);
+        }
+      }
+    </style>
+    <div class="demo5">
+      <div class="focus">
+        <div class="focus--mask">
+          <div class="focus--mask-inner">Education</div>
+        </div>
+      </div>
+    </div>
+
+    <p>— 兼容性： edge13、firefox、chrome、Android 4.4 —</p>
+  </div>
+
+  <h1>6、火烧文字</h1>
+  <div class="demo">
+    <style>
+      .demo6 svg {
+        width: 100%;
+        height: 100%;
+        font: 5em/1 Impact;
+        text-transform: uppercase;
+      }
+
+      .demo6 .text {
+        fill: url(#p-fire);
+        stroke: #330000;
+        stroke-width: 8;
+        stroke-opacity: .5;
+      }
+    </style>
+    <div class="demo6">
+      <svg viewBox="0 0 900 300">
+        <pattern id="p-fire" viewBox="30 100 186 200" patternUnits="userSpaceOnUse" width="216" height="200" x="-70" y="35">
+          <image xlink:href="images/fire.gif" width="256" height="300" />
+        </pattern>
+
+        <text text-anchor="middle" x="50%" y="30%" dy=".35em" class="text">
+          Education
+        </text>
+
+        <text text-anchor="middle" x="50%" y="70%" dy=".35em" class="text">
+          用户体验设计
+        </text>
+      </svg>
+    </div>
+    <p>— 兼容性： ie9、firefox、chrome、Android 4.4 —</p>
+  </div>
+</body>
+
+</html>

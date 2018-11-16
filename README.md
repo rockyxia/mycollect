@@ -1,5 +1,5 @@
 # MyCollect
-收集藏品
+收集整理
 
 # HTML5 CANVAS
 >jQuery粒子系统插件Particleground [查看](http://www.jq22.com/jquery-info566)
@@ -14,4 +14,4 @@
 >项目复盘思路：产品上线后要如何做复盘？ [查看](http://www.woshipm.com/pmd/734430.html/comment-page-1)
 
 # 自己制作
->文字动效（CSS3/SVG） [textanimation](https://rockyxia.github.io/mycollect/textanimation)
+>文字动效（CSS3/SVG） [textanimation](https://rockyxia.github.io/mycollect/textanimation/index.html)

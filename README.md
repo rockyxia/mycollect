@@ -19,4 +19,5 @@
 # 自己制作
 
 > 文字动效（CSS3/SVG） [textanimation](https://rockyxia.github.io/mycollect/textanimation/index.html)
-> 单标签效果（CSS3） [onelabelcss](https://rockyxia.github.io/mycollect/onelabelcss/index.html)
+
+> 单标签效果（CSS3） [onelabelcss](https://rockyxia.github.io/mycollect/onelabelcss/index.html) reference [ChokCoco](http://chokcoco.github.io/magicCss/html/index.html)
